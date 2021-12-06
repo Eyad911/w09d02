@@ -16,7 +16,11 @@ const initialState ={
             return {task,isDel:false}
        case "UPDATE":
         const {task,isDel}= payload;
-                return {task,isDel}
+         return {task,isDel}
+     
+         case "DELETE":
+       
+         return {task,isDel:true}
      
         default: 
         return state;
@@ -44,6 +48,13 @@ const initialState ={
    export const updateTask =(data)=>{
     return{
         type:"UPDATE",
+        payload:data
+    }
+};
+
+export const deleteTask =(data)=>{
+    return{
+        type:"DELETE",
         payload:data
     }
 };
