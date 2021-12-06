@@ -13,7 +13,7 @@ const initialState ={
             return {task,isDel}
         case "CREATE":
             
-            return {task:"",isDel:false}
+            return {task,isDel:false}
        case "UPDATE":
         const {task,isDel}= payload;
                 return {task,isDel}
@@ -26,18 +26,24 @@ const initialState ={
    
    export default Tasks;
    
-   export const login =(data)=>{
+   export const readTask =(data)=>{
        return{
-           type:"LOGIN",
+           type:"READ",
            payload:data
        }
    };
    
   
    
-   export const logout =(data)=>{
+   export const createTask =(data)=>{
        return{
-           type:"LOGOUT",
+           type:"CREATE",
            payload:data
        }
    };
+   export const updateTask =(data)=>{
+    return{
+        type:"UPDATE",
+        payload:data
+    }
+};
